@@ -445,7 +445,7 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
 
         # organize inventory by zabbix groups
         if self.get_option('add_zabbix_groups'):
-            content = self.zapi.host.get({'selectGroups': ['name']})
+            content = self.get_option({'selectGroups': ['name']})
             for record in content:
                 host_name = record['host']
                 if len(record['groups']) >= 1:
