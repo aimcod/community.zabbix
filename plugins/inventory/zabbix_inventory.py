@@ -117,8 +117,7 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
                     'Skipping due to inventory source not ending in "zabbix_inventory.yaml" nor "zabbix_inventory.yml"')
         return valid
 
-    def parse(self, inventory, loader, path,
-              cache=True):  # Plugin interface (2)
+    def parse(self, inventory, loader, path, cache=True):  # Plugin interface (2)
         super(InventoryModule, self).parse(inventory, loader, path)
 
         self._read_config_data(path)
